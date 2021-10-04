@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.0 (TBA)
+
+**This release consists of breaking changes.**
+
+In previous `Assent.Stategy.Slack` strategy, the `sub` user id field consisted of `{SUB}-{TEAM}`. Slack has migrated to OpenID Connect, and the response has been conformed to OIDC. The `sub` will now only consists of the `sub` id, and not include team id. To succesfullly migrate to this release all slack identity records storing the `sub` user id field has to be updated.
+
+* `Assent.Stategy.Slack` now uses OpenID connect instead of legacy OAuth 2.0, please note that the `sub` value may have changed
+
 ## v0.1.28 (2021-09-30)
 
 * `Assent.Strategy.OIDC` bug fixed so it handles unreachable urls correctly
